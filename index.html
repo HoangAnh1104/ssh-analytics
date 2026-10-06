@@ -22,19 +22,29 @@
   <p class="lead">A private, single-owner reporting tool for the developer's own YouTube channels.</p>
 
   <h2>What it does</h2>
-  <p>ssh-analytics is a small set of scripts that runs on the channel owner's own computers. With read-only
-  access granted by the owner, it reads channel and video statistics through the YouTube Data API and the
-  YouTube Analytics API, and turns them into daily and weekly performance reports (views, watch time,
-  impressions, click-through rate) for the owner's channels.</p>
+  <p>ssh-analytics is a small set of scripts that runs on the channel owner's own computers. It does two things
+  for the owner's own channels:</p>
+  <ul>
+    <li><strong>Reports.</strong> With read-only access, it reads channel and video statistics through the YouTube
+    Data API and the YouTube Analytics API, and turns them into daily and weekly performance reports (views,
+    watch time, impressions, click-through rate).</li>
+    <li><strong>Publishing details.</strong> After the owner uploads a video in YouTube Studio, and only when the
+    owner runs the command and confirms it, the tool fills in that video's details: title, description, tags,
+    language, the "altered or synthetic content" and "not made for kids" settings, the scheduled publish time,
+    a subtitle file and a thumbnail. It shows the owner every change before applying it.</li>
+  </ul>
 
   <h2>Who can use it</h2>
   <p>The tool is not offered to the public. It is used only by its developer, who is also the owner of every
-  channel it reads. It never posts, edits or deletes anything on YouTube.</p>
+  channel it reads or updates. It never uploads videos, never deletes anything, and never touches channels the
+  owner does not own.</p>
 
   <h2>Permissions requested</h2>
   <ul>
     <li><code>youtube.readonly</code>: view the owner's channel and video details</li>
     <li><code>yt-analytics.readonly</code>: view the owner's YouTube Analytics reports</li>
+    <li><code>youtube.force-ssl</code>: update the details, subtitles and thumbnail of videos the owner has
+    already uploaded (requested separately, only for the publishing feature)</li>
   </ul>
 
   <p>Read the <a href="privacy.html">Privacy Policy</a>.</p>

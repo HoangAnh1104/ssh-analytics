@@ -19,10 +19,11 @@
 <body>
 <main>
   <h1>Privacy Policy</h1>
-  <p class="lead">ssh-analytics · Effective 4 October 2026</p>
+  <p class="lead">ssh-analytics · Effective 6 October 2026 (previous version: 4 October 2026)</p>
 
   <p>ssh-analytics is a private tool used only by its developer to read statistics for the developer's own
-  YouTube channels. This policy explains what data it accesses and how that data is handled.</p>
+  YouTube channels and to fill in the details of videos the developer has uploaded to those channels. This
+  policy explains what data it accesses and how that data is handled.</p>
 
   <h2>Data the tool accesses</h2>
   <p>After the channel owner signs in with Google and grants read-only access, the tool reads:</p>
@@ -32,16 +33,25 @@
     <li>Analytics reports from the YouTube Analytics and Reporting APIs (scope
     <code>yt-analytics.readonly</code>): views, watch time, impressions and click-through rate.</li>
   </ul>
-  <p>The tool does not request access to email, contacts, files or any other Google data, and it cannot
-  post, edit or delete anything on YouTube.</p>
+  <p>For the optional publishing feature, the owner separately grants the scope <code>youtube.force-ssl</code>.
+  With it, and only when the owner runs the command and confirms the changes it shows, the tool updates videos
+  the owner has already uploaded in YouTube Studio: title, description, tags, language, the "altered or
+  synthetic content" and "not made for kids" settings, the scheduled publish time, a subtitle (caption) file
+  and a thumbnail. The content it writes comes from the owner's own files on the owner's computer.</p>
+  <p>The tool never uploads videos, never deletes videos, comments or other content, and never acts on
+  channels the owner does not own: before every update it checks that the signed-in account is the expected
+  channel. It does not request access to email, contacts, files or any other Google data.</p>
 
   <h2>How the data is used</h2>
-  <p>The data is used only to produce performance reports for the channel owner's own channels. It is not
-  used for advertising, it is not sold, and it is not shared with or transferred to any third party.</p>
+  <p>The data is used only to produce performance reports for the channel owner's own channels and to apply the
+  video details the owner has prepared. It is not used for advertising, it is not sold, and it is not shared
+  with or transferred to any third party.</p>
 
   <h2>Storage</h2>
-  <p>OAuth tokens and the downloaded statistics are stored only on the channel owner's own computers. They
-  are not uploaded to any server operated by the developer or by anyone else.</p>
+  <p>OAuth tokens and the downloaded statistics are stored only on the channel owner's own computers. The token
+  that allows updates is kept separately from the read-only tokens, outside any synced or shared folder. They
+  are not uploaded to any server operated by the developer or by anyone else. A local record of which videos
+  were updated (video ID, time, scheduled publish time) is kept alongside the owner's project files.</p>
 
   <h2>Retention and deletion</h2>
   <p>Report data is kept as long as the owner needs it for comparing channel performance over time, and the
